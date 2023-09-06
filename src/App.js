@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 import Search from "./Search";
 import Current from "./Current";
