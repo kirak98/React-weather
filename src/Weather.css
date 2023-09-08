@@ -1,13 +1,17 @@
-.temp {
-    padding: 40px 0 0 40px;
-    font-size: 36px;
+.temperature {
+    padding: 20px 0;
+    font-size: 40px;
     color: #fff;
-    margin: 5px;
+    margin: 2px;
     
+  }
+
+  .main-icon {
+    padding:0 28px;
   }
  
   .weather-temperature .units {
-    font-size: 36px;
+    font-size: 40px;
     top: -34px;
     text-decoration: none;
     color: #fff;
