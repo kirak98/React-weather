@@ -1,13 +1,14 @@
 import React, {useState} from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Current(props) {
   const [weatherData, setTWeatherData] = useState ({ready :false});
   function handleResponse(response) {
     setTWeatherData({
       ready: true,
-      date: "Today 19:00",
+      date: new Date(response.data.dt * 1000),
      temperature: response.data.main.temp,
      description: response.data.weather[0].description,
      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -23,10 +24,10 @@ export default function Current(props) {
     <div className="row">
       <div className="col-6">
         <div>
-          <h1 id="city"> Barcelona </h1>
+          <h1 className="city"> Barcelona </h1>
           <ul>
-            <li>
-              Last Updated: <span id="date"></span>
+            <li className="date">
+              Last Updated: <FormattedDate date={weatherData.date} /> 
             </li>
             <li className="text-capitalize" id="description">{weatherData.description}</li>
           </ul>
@@ -50,6 +51,7 @@ export default function Current(props) {
           </li>
         </ul>
       </div>
+    
 
     </div>
   );

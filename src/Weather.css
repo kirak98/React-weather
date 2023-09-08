@@ -1,3 +1,8 @@
+.date {
+    font-weight: 200;
+    font-size: 26px
+}
+
 .temperature {
     padding: 20px 0;
     font-size: 40px;
@@ -16,6 +21,7 @@
     text-decoration: none;
     color: #fff;
   }
+
   
   .card {
     margin: 20px;
