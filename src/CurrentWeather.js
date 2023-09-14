@@ -2,7 +2,7 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 
 
-export default function currentWeather(props) {
+export default function CurrentWeather(props) {
     return (
 <div className="currentWeather">
 <div className="row">
