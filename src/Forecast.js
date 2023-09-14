@@ -1,7 +1,7 @@
 import React from "react";
 import "./Weather.css";
 
-export default function Current(props) {
+export default function Weather(props) {
   return (
     <div className="container">
       <div className="card">
