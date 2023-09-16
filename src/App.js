@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 import Weather from "./Weather";
-import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
@@ -17,5 +16,7 @@ export default function App() {
         <Footer />
       </div>
     </div>
+
+    
   );
 }
