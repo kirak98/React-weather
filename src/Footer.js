@@ -6,8 +6,8 @@ export default function Footer(props) {
     <small>
       <a
         href="https://github.com/kirak98/my-app/tree/main/src" 
-        target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer" target="_blank"
+        
       >
         Open-Source Code  
       </a>
