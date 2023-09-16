@@ -8,7 +8,7 @@ export default function CurrentWeather(props) {
 <div className="row">
 <div className="col-6">
   <div>
-    <h1 className="city"> Barcelona </h1>
+    <h1 className="city">{props.data.city} </h1>
     <ul>
       <li className="date">
         Last Updated: <FormattedDate date={props.data.date} />

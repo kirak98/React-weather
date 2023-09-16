@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function Weather(props) {
   const [weatherData, setTWeatherData] = useState ({ready :false});
-  const [defaultCity, setCity] = useState(props.city);
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setTWeatherData({
@@ -25,16 +25,17 @@ export default function Weather(props) {
   }
         function handleSubmit(event) {
           event.preventDefault();
+          search();
          
         }
       
-        function handleCityWeather(event) {
+        function handleCity(event) {
           setCity(event.target.value);
         }
       
         function search() {
-        const apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+        const apiKey = "ed238469f9b5e9d801834270e65449bc";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
       }
       
@@ -49,8 +50,9 @@ export default function Weather(props) {
                   placeholder="Search City..."
                   className="form-control"
                   id="search-text-input"
+                  autoFocus="on"
                   autoComplete="off"
-                  onChange={handleCityWeather}
+                  onChange={handleCity}
                 />
               </div>
               <div className="col-3">
@@ -66,7 +68,7 @@ export default function Weather(props) {
           </div>
           );
 } else {
-
+search();
   return "Loading..."
 }
 } 
