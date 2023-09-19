@@ -24,21 +24,19 @@ export default function ForecastDay(props) {
     return (
       <div>
             <div className="container">
-      <div className="card">
+      <div className="card mt-1 mb-3">
+      <div className="card-body">
         <h2 className="card-header"> Upcoming Forecast</h2>
-        <div className="card-body">
-          <div className="container text-center">
         <div className="ForecastDay">{day()}</div>
-        <img src="" alt="" id="icon" className="forecastIcon"/>
         <div className="Forecast-temperatures">
           <span className="Forecast-temperature-max">
-            {maxTemperature()}
+            <p>{maxTemperature()}°C</p>
           </span>
+          <img src={props.icon} alt={props.data.weather[0].main} className="ForecastIcon"/>
           <span className="Forecast-temperature-min">
-            {minTemperature()}
+           <p> {minTemperature()}°C </p>
           </span>
         </div>
-      </div>
       </div>
       </div>
       </div>

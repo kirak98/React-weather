@@ -19,24 +19,20 @@ export default function WeatherForecast(props) {
       setLoaded(true);
     }
   
-    function load() {
-      let apiKey ="ed238469f9b5e9d801834270e65449bc";
-      let longitude = props.coordinates.lon;
-  let latitude = props.coordinates.lat;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
-    }
+    
 
   if (loaded) {
 
   return (
-          <div className="forecast row" id="forecast">
+    
+          <div className="forecast" id="forecast">
+<div className="row mb-3 mt-3">
      
           {forecast.map(function (dailyForecast, index) {
             if (index < 5) {
               return (
-                <div className="col-6" key={index}>
-            <ForecastDay data={dailyForecast}/>
+                <div className="col-4" key={index}>
+            <ForecastDay data={dailyForecast} icon={`https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}.png`}/>
           </div>
            );
             } else {
@@ -45,12 +41,16 @@ export default function WeatherForecast(props) {
           })}
              
       </div>
+      </div>
     
   
 
   );
 } else {
-  load();
-  return null;
+  let apiKey ="ed238469f9b5e9d801834270e65449bc";
+  let longitude = props.coordinates.lon;
+let latitude = props.coordinates.lat;
+let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+axios.get(apiUrl).then(handleResponse);
 }
 }
