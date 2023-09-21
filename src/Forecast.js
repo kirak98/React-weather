@@ -6,12 +6,13 @@ import ForecastDay from "./ForecastDay";
 
 
 
-export default function WeatherForecast(props) {
+export default function Forecast(props) {
   let[loaded, setLoaded] = useState(false);
-  let[forecast, setForecast] = useState(null);
+  let[forecast, setForecast] = useState(false);
 
   useEffect(() => {
-    setLoaded(false);},
+    setLoaded(false);
+  },
     [props.coordinates]);
 
     function handleResponse(response) {
@@ -31,7 +32,7 @@ export default function WeatherForecast(props) {
           {forecast.map(function (dailyForecast, index) {
             if (index < 5) {
               return (
-                <div className="col-4" key={index}>
+                <div key={index}>
             <ForecastDay data={dailyForecast} icon={`https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}.png`}/>
           </div>
            );
@@ -47,7 +48,7 @@ export default function WeatherForecast(props) {
 
   );
 } else {
-  let apiKey ="ed238469f9b5e9d801834270e65449bc";
+  let apiKey ="281450ec88936f4fa8ee9864682b49a0";
   let longitude = props.coordinates.lon;
 let latitude = props.coordinates.lat;
 let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;

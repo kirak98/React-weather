@@ -2,6 +2,7 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 
 
+
 export default function CurrentWeather(props) {
     return (
 <div className="currentWeather">
@@ -19,7 +20,7 @@ export default function CurrentWeather(props) {
   <div className="d-flex weather-temperature">
 <img src={props.data.icon} alt={props.data.description}     id="icon" className="main-icon"/>
     <div className="temperature">
-      <strong id="temperature" > {Math.round(props.data.temperature)}
+      <strong> {Math.round(props.data.temperature)}
       </strong>
       <span className="units">°C</span>
     </div>
