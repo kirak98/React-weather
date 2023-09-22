@@ -71,7 +71,7 @@ export default function Weather(props) {
       <div className="card">
       <h2 className="card-header"> Upcoming Forecast</h2>
       <div className="card-body">
-      <div className="container text-center">
+      <div className="container text-center col-2">
           <Forecast coord={weatherData.coord } />
           </div>
           </div>
