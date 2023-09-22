@@ -67,7 +67,16 @@ export default function Weather(props) {
             </div>
           </form>
           <CurrentWeather data={weatherData}/>
-          <Forecast coord={weatherData.coord} />
+          <div className="container">
+      <div className="card">
+      <h2 className="card-header"> Upcoming Forecast</h2>
+      <div className="card-body">
+      <div className="container text-center">
+          <Forecast coord={weatherData.coord } />
+          </div>
+          </div>
+          </div>
+          </div>
           </div>
           );
 } else {

@@ -3,43 +3,55 @@ import "./Weather.css";
 
 export default function ForecastDay(props) {
     function maxTemperature() {
-      let temperature = Math.round(props.data.temp.max);
-      return `${temperature}°`;
-    }
+        let temperature = Math.round(props.data.temperature.maximum);
+        return `${temperature}`;
+      }
+    
+      function minTemperature() {
+        let temperature = Math.round(props.data.temperature.minimum);
+        return `${temperature}`;
+      }
   
-    function minTemperature() {
-      let temperature = Math.round(props.data.temp.min);
-      return `${temperature}°`;
-    }
   
     function day() {
-      let date = new Date(props.data.dt * 1000);
+      let date = new Date(props.data.time * 1000);
       let day = date.getDay();
   
-      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      let days = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
   
       return days[day];
     }
   
     return (
-      <div>
-
-      <div className="card mt-1 mb-3">
-      <div className="card-body">
-        <h2 className="card-header"> Upcoming Forecast</h2>
-        <div className="ForecastDay">{day()}</div>
+      
+        <div className="row">
+        <div className="ForecastDay col-2">
+            {day()}
+            </div>
         <div className="Forecast-temperatures">
+       
           <span className="Forecast-temperature-max">
-            <p>{maxTemperature()}°C</p>
+            {maxTemperature()}°C
           </span>
-          <img src={props.icon} alt="weather" className="ForecastIcon"/>
+          <img
+            src={props.data.condition.icon_url}
+            alt={props.data.condition.description}
+          ></img>
+          
           <span className="Forecast-temperature-min">
-           <p> {minTemperature()}°C </p>
+            {minTemperature()}°C 
           </span>
         </div>
       </div>
-      </div>
-      </div>
+      
 
     );
   }

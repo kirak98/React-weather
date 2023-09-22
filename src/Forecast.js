@@ -27,13 +27,13 @@ export default function Forecast(props) {
   return (
     
           <div className="forecast" id="forecast">
-<div className="row mb-3 mt-3">
+<div className="row">
      
           {forecast.map(function (dailyForecast, index) {
             if (index < 5) {
               return (
                 <div key={index}>
-            <ForecastDay data={dailyForecast} icon={`https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}.png`}/>
+            <ForecastDay data={dailyForecast}  />
           </div>
            );
             } else {
@@ -47,11 +47,13 @@ export default function Forecast(props) {
   
 
   );
-} else {
-  let apiKey ="281450ec88936f4fa8ee9864682b49a0";
-  let longitude = props.coordinates.lon;
-let latitude = props.coordinates.lat;
-let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
-axios.get(apiUrl).then(handleResponse);
-}
-}
+} 
+  else {
+    let apiKey ="bd79ao40tde3dec118ca46bc3e6dd55f";
+    let lon = props.coord.lon;
+  let lat = props.coord.lat;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(apiUrl).then(handleResponse);
+  }
+  }
+  
