@@ -31,9 +31,9 @@ export default function ForecastDay(props) {
     }
   
     return (
-      
-        <div className="row">
-        <div className="ForecastDay col-2">
+    
+        <div className="col-2">
+        <div className="ForecastDay">
             {day()}
             </div>
         <div className="Forecast-temperatures">
@@ -51,7 +51,6 @@ export default function ForecastDay(props) {
           </span>
         </div>
       </div>
-      
 
     );
   }

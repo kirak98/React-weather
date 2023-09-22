@@ -12,15 +12,15 @@ export default function App() {
       <Weather defaultCity="Barcelona"/>
       
       </div>
-      <footer>   <small>
+      <footer className="text-center mb-3">   <small>
       <a
         href="https://github.com/kirak98/my-app/tree/main/src" 
         rel="noopener noreferrer" target="_blank"
         
       >
-        Open-Source Coded   
+        Open-Source <br/>    
       </a>
-        , by Kira King
+       Coded by Kira King
     </small>
     </footer>  
     </div>
