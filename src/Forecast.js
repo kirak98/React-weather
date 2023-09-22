@@ -36,8 +36,7 @@ export default function Forecast(props) {
             <ForecastDay data={dailyForecast}  />
           </div>
            );
-            } else {
-              return null;
+  
             }
           })}
              
@@ -54,6 +53,8 @@ export default function Forecast(props) {
   let lat = props.coord.lat;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
   axios.get(apiUrl).then(handleResponse);
+  
+  return null;
   }
   }
   
